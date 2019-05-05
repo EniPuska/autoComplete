@@ -1,12 +1,19 @@
-<html>
+<html ng-app="autoCompeteApp">
     <head>
+        <!------ CSS imports --------->
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
     </head>
-    <body>
-        <h1>Hi</h1>
+    <body ng-controller="autoCompleteController">
+        <div class="row">
+                <input class="form-contol" type="text"/>
+                <button class="btn btn-info" ng-click="search()">Search</button>
+        </div>
+        
+        <!--------- script imports -------->
         <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../assets/js/angular.min.js"></script>
         <script type="text/javascript" src="../assets/js/angular-route.min.js"></script>
+        <script type="text/javascript" src="../autoComplete/autoCompleteController.js"></script>
     </body>
 </html>
