@@ -10,4 +10,8 @@ router.get('/', function(req, res){
 router.post('/search',function(req,res){
     console.log("it works");
 });
+
+router.post('/autoComplete',function(req,res){
+    console.log("autoComplete");
+});
 module.exports = router;
