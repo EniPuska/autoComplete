@@ -12,7 +12,7 @@
     </head>
     <body ng-controller="autoCompleteController">
         <div class="row">
-            <input type="text" name="customerAddress" class="form-control modalBillDataInputs" ng-model="test" uib-typeahead="address for address in thCustomers($viewValue, 'address')" typeahead-editable="true" ng-required="true">
+            <input type="text" name="customerAddress" class="form-control modalBillDataInputs" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
             <button class="btn btn-info" ng-click="thCustomers()">Search</button>
         </div>
         
