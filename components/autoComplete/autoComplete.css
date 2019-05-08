@@ -1,0 +1,31 @@
+.searchRow{
+    position: relative;
+    top:5%;
+}
+
+.searchButton {
+    margin-top: 3%;
+    border-radius:15px;
+    width:115px;
+    height:40px;
+    background-color: #265c8eab;
+    color:#fff;
+    border-color: #265c8ea6;
+    opacity:0.8;
+}
+
+.searchButton:hover {
+    background-color: #265c8eab;
+    color:#fff;
+    border-color: #265c8ea6;
+    opacity:1;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; 
+}
+
+.searchInput{
+    border-radius:15px;
+}

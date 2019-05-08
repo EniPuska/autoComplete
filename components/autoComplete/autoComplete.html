@@ -2,6 +2,7 @@
     <head>
         <!------ CSS imports --------->
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../autoComplete/autoComplete.css">
         <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="../assets/js/angular.min.js"></script>
         <script type="text/javascript" src="../assets/js/angular-route.min.js"></script>
@@ -11,9 +12,13 @@
         
     </head>
     <body ng-controller="autoCompleteController">
-        <div class="row">
-            <input type="text" name="customerAddress" class="form-control modalBillDataInputs" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
-            <button class="btn btn-info" ng-click="thCustomers()">Search</button>
+        <div class="row searchRow">
+            <div class="col-lg-4 col-md-4 col-sm-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h3>What Place are you looking for?</h3>
+                    <input type="text" name="customerAddress" class="form-control searchInput" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
+                    <button class="btn searchButton">Search</button>
+            </div>
         </div>
         
         <!--------- script imports -------->
