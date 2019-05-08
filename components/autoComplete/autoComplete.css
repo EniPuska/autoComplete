@@ -1,6 +1,7 @@
 .searchRow{
     position: relative;
     top:5%;
+    width: 100%;
 }
 
 .searchButton {
@@ -28,4 +29,79 @@
 
 .searchInput{
     border-radius:15px;
+}
+
+.bannerSpace {
+    height: 300px;
+    border: 1px solid;
+    float: left;
+    width: 60%;
+}
+
+.imageDiv {
+    float:right;
+    width: 35%;
+}
+
+@media screen and (min-width: 481px) and (max-width:770px) {
+    .imageDiv {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .searchAutoComplete{
+        width:100%;
+    }
+
+    .bannerSpace{
+        width:90%;
+        margin-top:3%;
+        position: relative;
+        left: 5%;
+    }
+
+    .buttonDiv {
+        width: 100%;
+        text-align: center;
+    }
+
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .searchHeader{
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imageDiv {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .searchHeader{
+        font-size:16px;
+    }
+
+    .buttonDiv {
+        width: 100%;
+        text-align: center;
+    }
+
+    .row{
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .searchHeader{
+        margin-left: 2%;
+    }
+
+    [class*=' col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }

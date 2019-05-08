@@ -1,6 +1,8 @@
 <html ng-app="autoCompeteApp">
     <head>
         <!------ CSS imports --------->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta http-equiv="Content-Type" content="text/html;">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../autoComplete/autoComplete.css">
         <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
@@ -9,15 +11,38 @@
         <script type="text/javascript" src="../assets/js/ui-bootstrap-tpls-2.1.4.js"></script>
         <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>      
         <script type="text/javascript" src="../assets/js/ui-bootstrap-tpls-2.1.4.js"></script>
-        
     </head>
     <body ng-controller="autoCompleteController">
-        <div class="row searchRow">
-            <div class="col-lg-4 col-md-4 col-sm-4"></div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                    <h3>What Place are you looking for?</h3>
-                    <input type="text" name="customerAddress" class="form-control searchInput" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
+        <div class="row searchRow" ng-if="!tabletVersion">
+            <div class="col-lg-4 col-md-4">
+                <div class="bannerSpace" >
+                    <label>Banner Space</label>
+                </div>
+                <div class="imageDiv">
+                    <img src="../assets/images/xe_og_property.jpg" alt="Smiley face" class="img img-responsive " height="100" width="100"> 
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 searchAutoComplete">
+                <h4 class="searchHeader">What Place are you looking for?</h4>
+                <input type="text" name="customerAddress" class="form-control searchInput" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
+                <button class="btn searchButton">Search</button>
+            </div>
+        </div>
+        <div class="searchRow" ng-if="tabletVersion">
+            <div class="row searchRow">
+                <div class="imageDiv">
+                    <img src="../assets/images/xe_og_property.jpg" alt="Smiley face" class="img img-responsive " height="100" width="100"> 
+                </div>
+            </div>
+            <div class="row searchRow searchAutoComplete">
+                <h4 class="searchHeader">What Place are you looking for?</h4>
+                <input type="text" name="customerAddress" class="form-control searchInput" ng-model="selectedCountry" uib-typeahead="address for address in searchCountries($viewValue)" typeahead-editable="true" ng-required="true">
+                <div class="buttonDiv">
                     <button class="btn searchButton">Search</button>
+                </div>
+            </div>
+            <div class="bannerSpace searchRow row" ng-if="!mobileVersion">
+                <label>Banner Space</label>
             </div>
         </div>
         
