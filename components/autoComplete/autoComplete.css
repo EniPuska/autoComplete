@@ -43,6 +43,13 @@
     width: 35%;
 }
 
+[uib-typeahead-popup].dropdown-menu {
+    width:100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: unset;
+}
+
 @media screen and (min-width: 481px) and (max-width:770px) {
     .imageDiv {
         width: 100%;

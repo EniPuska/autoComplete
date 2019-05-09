@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const mysql = require('./database');
-const bodyParser = require('body-parser');
 router.get('/', function(req, res){
     res.render(path.join(__dirname, '../../components/autoComplete/autoComplete.html'));
 });

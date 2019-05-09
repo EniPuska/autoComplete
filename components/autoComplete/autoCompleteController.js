@@ -1,15 +1,21 @@
 app = angular.module('autoCompeteApp', ['ui.bootstrap']);
+
 app.factory('liveSearchService', ['$http', function($http) {
     var factory = {};
     factory.getCountries = function(input, searchValue) {
-        return $http.post('/autoComplete',{"input":input});
+      let requestTimeout = {
+        timeout: 3000
+      };
+      return $http.post('/autoComplete',{"input":input},requestTimeout);
     }
     return factory;
 }]);
-app.controller('autoCompleteController', ['$scope','$http', 'liveSearchService', function($scope,$http, liveSearchService) {
+
+app.controller('autoCompleteController', ['$scope','$http','$timeout','liveSearchService', function($scope,$http,$timeout,liveSearchService) {
     $scope.tabletVersion = false;
     $scope.mobileVersion = false;
-    $(window).resize(function(){
+    $scope.$watch('tabletVersion', function() {
+      $(window).resize(function(){
         $scope.$apply(function(){
           if(window.innerWidth <= 770) {
             $scope.tabletVersion = true;
@@ -22,14 +28,16 @@ app.controller('autoCompleteController', ['$scope','$http', 'liveSearchService',
             $scope.mobileVersion = false;
           }
         });
+      });
     });
+    
     $scope.searchCountries = function(viewValue, searchValue) {
-        return liveSearchService.getCountries(viewValue, searchValue).then(function(response) {
-            return response.data.response.map(function(item) {
-                if(response.data.status == 200)
-            	    return item.name;
-            });
-        });
+      return liveSearchService.getCountries(viewValue, searchValue).then(function(response) {
+          return response.data.response.map(function(item) {
+              if(response.data.status == 200)
+                return item.name;
+          });
+      });
     };    
 }]);
 
